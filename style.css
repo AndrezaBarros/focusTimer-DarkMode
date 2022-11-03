@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+
+    --body-bg: #FFFFFF;
+    --clock-font-color: #323238;
+    --bg-button-off:#E1E1E6;
+    --bg-button-on: #02799D;
+    --icon-color-button-on: #FFFFFF;
+    --icon-color-button-off: #323238;
+}
+
+.dark-mode:root {
+    --body-bg: #000000;
+    --clock-font-color: #FFFFFF;
+    --bg-button-off:#29292E;
+    --bg-button-on: #0A3442;
+    --icon-color-button-on: #FFFFFF;
+    --icon-color-button-off: #C4C4CC;
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    background-color: var(--body-bg);
+
+    height: 100vh;
+}
+
+#screenMode{
+    display: flex;
+    justify-content: flex-end;
+    padding: 5rem 6rem 0 0;
+}
+
+main{
+    margin: 14vh auto;
+    display: flex;
+    align-items: center;
+    gap: 19.2rem;
+
+    max-width: 82.1rem;
+    max-height: 33.6rem;
+}
+
+#stopwatch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    margin-top: -40px;
+
+    max-width: 32.1rem;
+    height: 21.3rem;
+}
+
+#timer{
+    font-size: 12.5rem;
+    font-weight: bold;
+    color: var(--clock-font-color);
+
+    display: flex;
+}
+
+#controls{
+    display: flex;
+    gap: 4rem;
+}
+
+#controls button, div button{
+    border: none;
+    background-color: var(--body-bg);
+}
+
+#sons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.2rem;
+}
+
+#sons button{
+    border: none;
+    border-radius: 24px;
+    background-color: var(--bg-button-off);
+
+    width: 13.8rem;
+    height: 15.2rem;
+}
+
+button:hover{
+    transform: scale(1.1);
+    transition: transform .3s;
+    cursor: pointer;
+}
+
+#sons button:hover, 
+#sons button:hover path{
+    background-color: var(--bg-button-on);
+    fill: var(--icon-color-button-on);
+}
+
+#sons button:hover #volumeControl input, 
+#sons button:hover #volumeControl input::-webkit-slider-thumb{
+    background-color: var(--icon-color-button-on);
+}
+
+#volumeControl input{
+    margin-top: 3.2rem;
+
+    width: 90px;
+    height: 4px;
+    outline: none;
+    appearance: none;
+
+    border-radius: 8px;
+    background-color: var(--icon-color-button-off);
+}
+
+#volumeControl input::-webkit-slider-thumb{
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    background-color: var(--icon-color-button-off);
+}
+
+.hide{
+    display: none;
+}
+
+path{
+    fill: var(--icon-color-button-off);
+}
